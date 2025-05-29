@@ -1,0 +1,631 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Georgia", serif;
+}
+
+/* ---------------------------------------
+   Menú flotante Servicios / Testimonios
+   --------------------------------------- */
+.header-nav {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  z-index: 3;
+}
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.header-nav a:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("img/portada.png"); /* reemplaza con tu imagen */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+}
+
+.nav-link {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo img {
+  height: 140px;
+  width: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)); */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.branding {
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 120px;
+  margin: auto;
+  display: block;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.social-icons i {
+  margin: 0 6px;
+  font-size: 1.1rem;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+/* SECCION WP  */
+.consulta-section {
+  background-color: #000000;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.btn-consulta {
+  background: linear-gradient(145deg, #25d366, #1ebe5d);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 18px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #a6e2b5;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-consulta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: left 0.4s ease-in-out;
+}
+
+.btn-consulta:hover::after {
+  left: 125%;
+}
+
+.btn-consulta:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* SECCION VIDEO  */
+.video-section {
+  background: linear-gradient(160deg, #0d0d0d, #1a1a1a);
+  color: #f5f5dc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.video-title {
+  font-size: 2.8rem;
+  color: #d4af37; /* oro */
+  margin-bottom: 10px;
+  font-family: "Georgia", serif;
+}
+
+.video-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 4px 0;
+}
+
+.video-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.video-frame {
+  margin-top: 30px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* SECCION SERVICIOS  */
+.servicios-section {
+  background-color: #111;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.servicios-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.servicio-card {
+  background-color: #1b1b1b;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.4);
+}
+
+.servicio-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  height: auto;
+}
+
+.servicio-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #f0d060;
+}
+
+.stars {
+  font-size: 1rem;
+  color: gold;
+  display: block;
+  margin-top: 5px;
+}
+
+.servicio-card hr {
+  border: 1px solid #c2a748;
+  width: 200px;
+  margin: 10px auto;
+}
+
+.servicio-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Botón consulta */
+.consulta-btn-wrapper {
+  margin-top: 40px;
+}
+
+.btn-consulta {
+  background: linear-gradient(145deg, #25d366, #1ebe5d);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 16px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #a6e2b5;
+  transition: all 0.3s ease;
+}
+
+.btn-consulta:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* INTRO SECCION  */
+.intro-section {
+  background: url("img/fuego.png") no-repeat center center / cover;
+  padding: 80px 20px;
+  color: white;
+  position: relative;
+}
+
+.intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.intro-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.text-content {
+  flex: 1 1 500px;
+}
+
+.text-content h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Georgia", serif;
+}
+
+.text-content .highlight {
+  color: #d4af37;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.text-content .quote {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #eee;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.image-content {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+}
+
+.intro-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.intro-btn-consulta {
+  background: linear-gradient(145deg, #25d366, #1ebe5d);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 16px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #a6e2b5;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.intro-btn-consulta:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 55px;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.call-float {
+  position: fixed;
+  bottom: 160px; /* encima del botón de WhatsApp si está a 20px */
+  right: 25px; /* separado hacia la izquierda */
+  background-color: #007bff; /* azul */
+  color: white;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.call-float:hover {
+  transform: scale(1.1);
+}
+
+/* SECCION FRASE */
+.frase-amor {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
+  color: #000;
+}
+
+.contenedor-frase {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+}
+
+.subtitulo {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.frase-destacada {
+  font-family: "Georgia", serif;
+  font-size: 2.1rem;
+  line-height: 1.6;
+  color: #b0892b;
+  margin-bottom: 30px;
+}
+
+.boton-frase {
+  margin-top: 20px;
+}
+
+.servicios-amor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.item-servicio {
+  flex: 1 1 280px;
+  border-top: 1px solid #c9b66b;
+  padding-top: 20px;
+}
+
+.item-servicio h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.item-servicio p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Botón reutilizado */
+.btn-consulta {
+  background: linear-gradient(145deg, #25d366, #1ebe5d);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.btn-consulta:hover {
+  transform: scale(1.05);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* SECCION CONSULTA */
+.seccion-consulta {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.consulta-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.consulta-imagen {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.consulta-imagen img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+}
+
+.consulta-texto {
+  flex: 1 1 50%;
+  color: #b0892b;
+}
+
+.consulta-subtitulo {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #80002b;
+}
+
+.consulta-descripcion {
+  font-size: 1.3rem;
+  font-family: "Georgia", serif;
+  line-height: 1.7;
+}
+
+/* SECCION TESTIMONIOS */
+.testimonios-section {
+  background-color: #f2f2f2;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contenedor-testimonios {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo-testimonios {
+  font-family: "Georgia", serif;
+  font-size: 2.5rem;
+  color: #b0892b;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.testimonios-imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.testimonio-img img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonios-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.video-testimonio {
+  flex: 1 1 500px;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-testimonio iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* FOOTER  */
