@@ -71,7 +71,7 @@
 
   <!-- SECCION BOTON WP -->
   <section class="consulta-section">
-    <a href="https://wa.me/+523330347683/?text=Hola%20quiero%20más%20información" class="btn-consulta">
+    <a href="https://wa.me/+523330347683/?text=Hola%20quiero%20más%20información" target="_blank" class="btn-consulta">
       <i class="fab fa-whatsapp"></i> CONSULTA AQUÍ
     </a>
   </section>
@@ -304,6 +304,21 @@
         gtag_report_conversion(this.href);         // dispara la conversión y redirige
       });
     });
+  </script>
+
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location.href = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16932118716/jwiTCMWjqssaELzB7ok_', // <-- ID de evento
+        'event_callback': callback
+      });
+      return false;
+    }
   </script>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
